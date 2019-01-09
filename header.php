@@ -19,12 +19,10 @@
 			gtag('config', 'UA-123648734-1');
 		</script>
 	</head>
-	<body id="page-top">
-		<header>
-			<section class="content_container">
-				<div class="row">
-					<div class="col-xs-12"></div>
-				</div>
-			</section>
+	<body>
+		<header id="main-header">
+				<nav id="main-nav">
+
+				</nav>
 		</header>
 		<main role="main" class="<?=(isset($pagetype))? $pagetype : '' ; ?>">
