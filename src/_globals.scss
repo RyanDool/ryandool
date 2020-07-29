@@ -1,0 +1,45 @@
+/*GLOBALS*/
+/**colors**/
+$prmlogo: #006735;
+$sndlogo: #003333;
+$drkgreen: #003e00;
+$nearblk: #101010;
+$mutewhite: #fbfbfb;
+$stngrey: #c0c0c0;
+/** angles **/
+$angle-size: 2rem;
+.angled-top-lr{
+	clip-path: polygon(0 calc(30% - #{$angle-size}), 100% 0, 100% 100%, 0 100%);
+}
+.angled-top-rl{
+	clip-path: polygon(0 0, 100% calc(30% - #{$angle-size}), 100% 100%, 0 100%);
+}
+/**mixins**/
+@mixin animation($animate...) {
+	$max: length($animate);
+	$animations: '';
+	@for $i from 1 through $max {
+		$animations: #{$animations + nth($animate, $i)};
+		@if $i < $max {
+			$animations: #{$animations + ', '};
+		}
+	}
+	-webkit-animation: $animations;
+	-moz-animation: $animations;
+	-o-animation: $animations;
+	animation: $animations;
+}
+@mixin keyframes($animationName) {
+	@-webkit-keyframes #{$animationName} {
+		@content;
+	}
+	@-moz-keyframes #{$animationName} {
+		@content;
+	}
+	@-o-keyframes #{$animationName} {
+		@content;
+	}
+	@keyframes #{$animationName} {
+		@content;
+	}
+}
